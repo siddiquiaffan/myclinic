@@ -43,7 +43,7 @@ export async function getAllSlotsByDate({ from, to }: GetAllSlotsByDate) : Promi
     });
 
     // group slots by date
-    const groupedSlots: Record<string, Slot[]> = slotsFromDb.reduce((acc: Record<string, Slot[]>, slot) => {
+    const groupedSlots: Record<string, Slot[]> = slotsFromDb.reduce((acc: Record<string, Slot[]>, slot: Slot) => {
         const date = slot.date.toDateString();
 
         if (!acc[date])
