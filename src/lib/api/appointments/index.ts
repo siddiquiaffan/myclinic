@@ -91,7 +91,7 @@ export async function cancelAppointmentByTrackingId(
         }
 
         // cancel appointment
-        const res = await db?.$transaction(async (db) => {
+        const res = await db?.$transaction(async (db: any) => {
             const deletedAppointment = await db.appointment.delete({
                 where: { id: appointment.id }
             })
@@ -158,7 +158,7 @@ export async function rescheduleAppointment(d: RescheduleAppointment): Promise<{
         const { trackingId, email } = d
 
         // Start a transaction
-        const appointment = await db.$transaction(async (db) => {
+        const appointment = await db.$transaction(async (db: any) => {
 
             // Get the existing appointment
             // const { appointment } = await getAppointment({ trackingId, email })
