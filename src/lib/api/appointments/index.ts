@@ -24,7 +24,7 @@ export async function bookAppointment(options: Appointment) {
     try {
 
         // create appointment
-        const appointment = db.$transaction(async (db) => {
+        const appointment = db.$transaction(async (db: any) => {
 
             const { slot, new: isNewSlot, error } = await findOrCreateSlot(options)
             if (!slot)
