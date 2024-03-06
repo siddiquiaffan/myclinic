@@ -3,7 +3,7 @@ import { CompleteSlot, relatedSlotSchema } from "./index"
 
 export const appointmentSchema = z.object({
   id: z.string(),
-  trackingId: z.number().int().optional(),
+  trackingId: z.number().int(),
   slotId: z.string(),
   name: z.string(),
   email: z.string(),
